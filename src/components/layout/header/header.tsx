@@ -8,15 +8,12 @@ import {
   RowSpaceBetweenContainer,
 } from '../../../../styles/container'
 import HeaderList from './header-list'
+import IconLink from '@/components/custom/Link/icon-link'
 
 const Header = () => {
   return (
     <HeaderContainer>
-      <HeaderMenuWrapper href="/">
-        <div style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-          <Image src={headerIcon} alt="headerIcon" style={{ width: '100%', height: '100%' }} />
-        </div>
-      </HeaderMenuWrapper>
+      <IconLink href="/" height="66px" padding="13px 0" src={headerIcon} alt="headerIcon" />
       <HeaderList />
     </HeaderContainer>
   )

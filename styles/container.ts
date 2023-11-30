@@ -23,6 +23,14 @@ export const RowSpaceBetweenContainer = styled.div`
   justify-content: center;
 `
 
+export const RowLeftContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+`
+
+// ? headerContainer
+
 export const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
@@ -48,5 +56,32 @@ export const HeaderMenuList = styled.li`
   :hover {
     color: #1ae4d1;
     transition: all 0.3s ease-in-out;
+  }
+`
+
+// ? footerContainer
+
+export const FooterContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+`
+
+export const FooterHeaderContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #e5e7eb;
+`
+
+export const FooterBodyContainer = styled.div`
+  width: 100%;
+
+  & p {
+    font-size: 13px;
+    color: rgb(91, 91, 91);
+    line-height: 1.3;
   }
 `
