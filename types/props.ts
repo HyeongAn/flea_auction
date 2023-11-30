@@ -7,18 +7,11 @@ export interface IconLinkProps {
   href: string
   src: StaticImageData
   alt: string
-  width?: string
-  height?: string
-  padding?: string
-  margin?: string
+  style?: React.CSSProperties | undefined
 }
 
 export interface TextLinkProps {
   href: string
   content: string
-  fontWeight?: string
-  fontSize?: string
-  color?: string
-  padding?: string
-  margin?: string
+  style?: React.CSSProperties | undefined
 }

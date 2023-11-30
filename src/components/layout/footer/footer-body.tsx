@@ -28,7 +28,7 @@ const FooterBody = () => {
               key={`footer-text-link-${index}`}
               href={text.href}
               content={text.content}
-              {...footerTextLinkStyle}
+              style={footerTextLinkStyle}
             />
           )
         })}
@@ -40,7 +40,7 @@ const FooterBody = () => {
         개인정보보호책임자: 오진석
         <br />
       </p>
-      <p style={{ marginTop: '50px' }}>@Copyright 2020. Flea Auction Inc. all rights reserved.</p>
+      <p style={{ margin: '50px 0' }}>@Copyright 2020. Flea Auction Inc. all rights reserved.</p>
     </FooterBodyContainer>
   )
 }

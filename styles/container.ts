@@ -42,12 +42,13 @@ export const HeaderContainer = styled.div`
 `
 
 export const HeaderMenuWrapper = styled.a`
-  height: 66px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  height: 66px;
   padding: 13px 0;
+  font-size: 15px;
+  cursor: pointer;
 `
 
 export const HeaderMenuList = styled.li`

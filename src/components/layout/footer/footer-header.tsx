@@ -14,7 +14,7 @@ const FooterHeader = () => {
   return (
     <FooterHeaderContainer>
       {icons.map((icon, index) => {
-        return <IconLink {...icon} {...footerIconLinkStyle} key={`footer-icon-link-${index}`} />
+        return <IconLink {...icon} style={footerIconLinkStyle} key={`footer-icon-link-${index}`} />
       })}
     </FooterHeaderContainer>
   )
