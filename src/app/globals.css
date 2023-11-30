@@ -1,7 +1,22 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
-  font-family: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono',
-    'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Inter', 'Apple SD Gothic Neo, Malgun Gothic, Nanum Gothic, Meiryo, sans-serif, serif, Arial',
+    'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', 'Noto Sans', 'sans-serif';
+}
+
+div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
 }
