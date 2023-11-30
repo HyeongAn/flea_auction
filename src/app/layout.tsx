@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import StyledComponentsRegistry from '../../lib/registry'
+import Layout from '../components/layout/layout'
 
 export const metadata: Metadata = {
   title: 'fleaauction',
@@ -12,7 +14,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <StyledComponentsRegistry>
+          <Layout>{children}</Layout>
+        </StyledComponentsRegistry>
+      </body>
     </html>
   )
 }
