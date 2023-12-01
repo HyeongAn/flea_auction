@@ -1,6 +1,7 @@
 import { StaticImageData } from 'next/image'
+import { AuctionItem } from './type'
 
-export interface LayoutProps {
+export interface ChildrenProps {
   children: React.ReactNode
 }
 export interface IconLinkProps {
@@ -9,9 +10,11 @@ export interface IconLinkProps {
   alt: string
   style?: React.CSSProperties | undefined
 }
-
 export interface TextLinkProps {
   href: string
   content: string
   style?: React.CSSProperties | undefined
+}
+export interface GalleryProps {
+  auctionList: AuctionItem[]
 }

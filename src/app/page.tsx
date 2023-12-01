@@ -1,3 +1,11 @@
-export default function Home() {
-  return <div>flea_auction</div>
+import HydratedPage from './hydratedPage'
+
+const Home = () => {
+  return (
+    <>
+      <HydratedPage />
+    </>
+  )
 }
+
+export default Home

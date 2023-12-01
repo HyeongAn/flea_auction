@@ -1,13 +1,16 @@
 import React from 'react'
-import { LayoutProps } from '../../../types/props'
+import { ChildrenProps } from '../../../types/props'
 import Header from './header/header'
 import Footer from './footer/footer'
+import Providers from '../../../lib/providers'
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children }: ChildrenProps) => {
   return (
     <>
       <Header />
-      <main style={{ flex: '1' }}>{children}</main>
+      <Providers>
+        <main style={{ flex: '1' }}>{children}</main>
+      </Providers>
       <Footer />
     </>
   )
