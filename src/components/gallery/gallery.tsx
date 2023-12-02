@@ -24,6 +24,7 @@ const Gallery = () => {
   const auctionItemListLength = auctionItemList.length
   const [currentIndex, setCurrentIndex] = useState(3)
   const [auctionList, setAuctionList] = useState<AuctionItem[]>([])
+  const [firstRender, setFirstRender] = useState(true)
 
   useEffect(() => {
     if (data) setAuctionItemList(data)
@@ -55,9 +56,10 @@ const Gallery = () => {
           slideCurrent.style.transform = `translateX(-${4 * 340}px)`
           slideCurrent.style.transition = 'all 0.5s ease-in-out'
         }, 50)
-      } else if (currentIndex === 3) {
+      } else if (currentIndex === 3 && firstRender) {
         slideCurrent.style.transform = `translateX(-${currentIndex * 340}px)`
         slideCurrent.style.transition = 'transform 0s ease-in-out 0s'
+        setFirstRender(false)
       } else {
         slideCurrent.style.transform = `translateX(-${currentIndex * 340}px)`
         slideCurrent.style.transition = 'all 0.5s ease-in-out'
