@@ -29,6 +29,13 @@ export const RowLeftContainer = styled.div`
   align-items: center;
 `
 
+export const RowRightContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`
+
 // ? headerContainer
 
 export const HeaderContainer = styled.div`
@@ -85,4 +92,56 @@ export const FooterBodyContainer = styled.div`
     color: rgb(91, 91, 91);
     line-height: 1.3;
   }
+`
+
+// ? galleryContainer
+
+export const GalleryContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 200px;
+  width: 100%;
+  height: 50%;
+  position: relative;
+`
+
+export const ItemContainer = styled.div`
+  min-width: 300px;
+  height: 400px;
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  margin: 0 20px;
+  box-shadow: 0 0 8px rgb(0 0 0 / 20%);
+`
+
+export const ItemImageWrapper = styled.div`
+  width: 100%;
+  height: 280px;
+  position: relative;
+`
+
+export const ItemContentContainer = styled.div`
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  position: relative;
+`
+
+export const SlideContainer = styled.div`
+  width: 100%;
+  height: 420px;
+  max-width: 1020px;
+  min-width: 680px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+`
+export const CardSlider = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `
