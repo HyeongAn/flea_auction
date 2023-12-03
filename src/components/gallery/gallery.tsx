@@ -4,16 +4,16 @@ import Image from 'next/image'
 import Item from './item'
 import leftArrow from '../../../assets/svg/left-arrow.svg'
 import rightArrow from '../../../assets/svg/right-arrow.svg'
-import { useQueryClient } from '@tanstack/react-query'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { AuctionItem, SSEAuction } from '../../../types/type'
 import { shuffleArray } from '../../../lib/util.module'
 import { SliderButton } from '../../../styles/button'
 import { CardSlider, GalleryContainer, SlideContainer } from '../../../styles/container'
+import { getAuctionList } from '../../../lib/api.module'
 
 const Gallery = () => {
   // get cache data
-  const queryClient = useQueryClient()
-  const data: AuctionItem[] | undefined = queryClient.getQueryData(['auctionList'])
+  const { data } = useQuery({ queryKey: ['auctionList'], queryFn: getAuctionList })
 
   // update SSE Auction data
   const [sseAuction, setSseAuction] = useState<SSEAuction>()
@@ -50,12 +50,13 @@ const Gallery = () => {
 
   // get carousel Array
   useEffect(() => {
+    if (!data) return
     let newList = shuffleArray(data)
     newList = [...newList.slice(newList.length - 3, newList.length), ...newList, ...newList.slice(0, 3)]
     setAuctionList(newList)
   }, [data])
 
-  // use carousel
+  // control carousel
   useEffect(() => {
     const slideCurrent = slideRef.current
     if (slideCurrent && auctionItemListLength !== undefined) {

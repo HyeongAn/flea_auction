@@ -100,7 +100,7 @@ export const GalleryContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 200px;
+  padding: 40px 200px;
   width: 100%;
   height: 50%;
   position: relative;
