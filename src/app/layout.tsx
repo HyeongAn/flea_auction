@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import StyledComponentsRegistry from '../../lib/registry'
 import Layout from '../components/layout/layout'
-import Providers from './providers'
 
 export const metadata: Metadata = {
   title: 'fleaauction',
@@ -17,9 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko">
       <body>
         <StyledComponentsRegistry>
-          <Providers>
-            <Layout>{children}</Layout>
-          </Providers>
+          <Layout>{children}</Layout>
         </StyledComponentsRegistry>
       </body>
     </html>

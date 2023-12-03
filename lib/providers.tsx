@@ -10,7 +10,8 @@ const Providers = ({ children }: ChildrenProps) => {
       defaultOptions: {
         queries: {
           refetchOnWindowFocus: false,
-          retry: false,
+          staleTime: Infinity,
+          gcTime: Infinity,
         },
       },
     })

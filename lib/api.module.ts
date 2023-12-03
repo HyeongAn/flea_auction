@@ -1,7 +1,8 @@
 import { AuctionItem } from '../types/type'
+import { shuffleArray } from './util.module'
 
 export const getAuctionList = async () => {
-  const response = await fetch(`${process.env.REACT_APP_FLEA_AUCTION_LIST}`)
+  const response = await fetch(`${process.env.API_BASE_URL}/auctions/ongoing`)
   const auctionList = (await response.json()).map((item: AuctionItem) => {
     return {
       id: item.id,

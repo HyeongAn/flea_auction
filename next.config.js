@@ -6,6 +6,9 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["cdn.fleaauction.world"]
+  },
+  env: {
+    API_BASE_URL: process.env.API_BASE_URL
   }
 }
 

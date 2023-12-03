@@ -1,14 +1,13 @@
 'use client'
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Item from './item'
 import leftArrow from '../../../assets/svg/left-arrow.svg'
 import rightArrow from '../../../assets/svg/right-arrow.svg'
 import { useQueryClient } from '@tanstack/react-query'
-import { AuctionItem } from '../../../types/type'
+import { AuctionItem, SSEAuction } from '../../../types/type'
 import { shuffleArray } from '../../../lib/util.module'
 import { SliderButton } from '../../../styles/button'
-import { AuctionListContext } from '../../../lib/context.module'
 import { CardSlider, GalleryContainer, SlideContainer } from '../../../styles/container'
 
 const Gallery = () => {
@@ -16,27 +15,47 @@ const Gallery = () => {
   const queryClient = useQueryClient()
   const data: AuctionItem[] | undefined = queryClient.getQueryData(['auctionList'])
 
-  // store cache data
-  const { auctionItemList, setAuctionItemList } = useContext(AuctionListContext)
+  // update SSE Auction data
+  const [sseAuction, setSseAuction] = useState<SSEAuction>()
 
   // About carousel
   const slideRef = useRef<HTMLDivElement>(null)
-  const auctionItemListLength = auctionItemList.length
+  const auctionItemListLength = data?.length
   const [currentIndex, setCurrentIndex] = useState(3)
   const [auctionList, setAuctionList] = useState<AuctionItem[]>([])
   const [firstRender, setFirstRender] = useState(true)
 
+  // connect to SSE
   useEffect(() => {
-    if (data) setAuctionItemList(data)
+    const eventSource = new EventSource(`${process.env.API_BASE_URL}/sse/event`)
+    eventSource.addEventListener('sse.auction_viewed', (event) => {
+      const data: SSEAuction = JSON.parse(event.data)
+      setSseAuction(data)
+    })
+    return () => {
+      eventSource.close()
+    }
   }, [])
+
+  // update auctionList upto sseAuction
+  useEffect(() => {
+    if (sseAuction) {
+      const newList = [...auctionList].map((item) => {
+        if (item.id === sseAuction.auctionId) item.viewCount = sseAuction.viewCount
+        return item
+      })
+      setAuctionList(newList)
+    }
+  }, [sseAuction])
 
   // get carousel Array
   useEffect(() => {
-    let newList = shuffleArray(auctionItemList)
+    let newList = shuffleArray(data)
     newList = [...newList.slice(newList.length - 3, newList.length), ...newList, ...newList.slice(0, 3)]
     setAuctionList(newList)
-  }, [auctionItemList])
+  }, [data])
 
+  // use carousel
   useEffect(() => {
     const slideCurrent = slideRef.current
     if (slideCurrent && auctionItemListLength !== undefined) {

@@ -6,3 +6,8 @@ export interface AuctionItem {
   images: string[]
   viewCount: number
 }
+
+export interface SSEAuction {
+  auctionId: number
+  viewCount: number
+}
