@@ -96,6 +96,6 @@ react의 hook으로 eventHandler 함수의 내부로 들어갈 수 없기도 하
 
 ### next.js의 cache
 
-next.js로 개인 블로그를 개설했을 때에는 규모가 그리 크지 않아 initialData로 계속해서 props로 값을 내려주면서 사용하다보니 props drilling이 발생하고 계속해서 type을 지정해줘야하는 불편함이 있었다. 이번엔 hydration을 사용하여 이와 같은 문제를 해결하고 싶었다.
+next.js로 개인 블로그를 개설했을 때에는 규모가 그리 크지 않아 initialData로 계속해서 props로 값을 내려주면서 사용하다보니 props drilling이 발생하고 계속해서 type을 지정해줘야하는 불편함이 있었습니다. 이번엔 hydration을 사용하여 이와 같은 문제를 해결하고 싶었습니다.
 
-서버에서 쿼리를 미리 가져온다음 해당 쿼리를 queryClient로 dehydrate하고 이 데이터를 hydrate state에 담아 클라이언트에서는 캐시되어 있는 쿼리를 가져오도록 하였다.
+서버에서 쿼리를 미리 가져온다음 해당 쿼리를 queryClient로 dehydrate하고 이 데이터를 hydrate state에 담아 클라이언트에서는 캐시되어 있는 쿼리를 가져오도록 하여 앞선 문제를 해결하였습니다.
