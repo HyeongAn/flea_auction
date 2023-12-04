@@ -46,6 +46,10 @@ export const HeaderContainer = styled.div`
   top: 0;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   padding: 0 30px;
+
+  @media (max-width: 390px) {
+    padding: 0 20px;
+  }
 `
 
 export const HeaderMenuWrapper = styled.a`
@@ -75,6 +79,10 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0 30px;
+
+  @media (max-width: 390px) {
+    padding: 0 20px;
+  }
 `
 
 export const FooterHeaderContainer = styled.div`
@@ -90,7 +98,7 @@ export const FooterBodyContainer = styled.div`
   & p {
     font-size: 13px;
     color: rgb(91, 91, 91);
-    line-height: 1.3;
+    line-height: 1.5;
   }
 `
 
@@ -104,6 +112,10 @@ export const GalleryContainer = styled.div`
   width: 100%;
   height: 50%;
   position: relative;
+
+  @media (max-width: 390px) {
+    padding: 50px 0;
+  }
 `
 
 export const ItemContainer = styled.div`
@@ -133,7 +145,7 @@ export const SlideContainer = styled.div`
   width: 100%;
   height: 420px;
   max-width: 1020px;
-  min-width: 680px;
+  min-width: 340px;
   display: flex;
   align-items: center;
   overflow: hidden;

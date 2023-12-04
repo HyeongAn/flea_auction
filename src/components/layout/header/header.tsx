@@ -1,12 +1,6 @@
 import React from 'react'
-import Image from 'next/image'
 import headerIcon from '../../../../assets/icon/header_icon.png'
-import {
-  HeaderContainer,
-  HeaderMenuWrapper,
-  RowCenterContainer,
-  RowSpaceBetweenContainer,
-} from '../../../../styles/container'
+import { HeaderContainer } from '../../../../styles/container'
 import HeaderList from './header-list'
 import IconLink from '@/components/custom/Link/icon-link'
 

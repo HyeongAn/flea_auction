@@ -11,5 +11,5 @@ export const SliderButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin: 0 5px;
+  padding: 0 5px;
 `
